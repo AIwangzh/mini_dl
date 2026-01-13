@@ -1,0 +1,10 @@
+^E:\BAIDUSYNCDISK\DNN FRAMWORK\MINI_DL\BUILD\CMAKEFILES\92BBBE5017638F9DB91ACF0A40EC5625\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SE:/BaiduSyncdisk/DNN Framwork/mini_dl" "-BE:/BaiduSyncdisk/DNN Framwork/mini_dl/build" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "E:/BaiduSyncdisk/DNN Framwork/mini_dl/build/mini_dl.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
