@@ -8,6 +8,7 @@ Tensor add(const Tensor& a, const Tensor& b);
 Tensor sub(const Tensor& a, const Tensor& b);
 Tensor mul(const Tensor& a, const Tensor& b); // 逐元素乘
 Tensor div(const Tensor& a, const Tensor& b); // 逐元素除
+Tensor neg(const Tensor& a); // 逐元素取负
 
 // ---------------- Tensor × scalar / scalar × Tensor ----------------
 Tensor mul(const Tensor& t, float scalar);

@@ -56,6 +56,7 @@ public:
     Tensor operator-(const Tensor& other) const;
     Tensor operator*(const Tensor& other) const;
     Tensor operator/(const Tensor& other) const; 
+    Tensor operator-() const;
 
     // 高维transpose
     Tensor transpose(const std::vector<size_t>& perm) const;
@@ -64,7 +65,8 @@ public:
 
     /* === Autograd 工具 === */
     friend struct GradFn; // 反向传播函数基类的友元声明
-    void backward(); // 反向传播调用接口
+    void backward(); // 反向传播调用接口，仅限scalar
+    void backward(const std::vector<float>& grad_out); // 适用于非scalar Tensor
     const std::vector<float>& grad() const { return grad_; } // 梯度访问接口
     void zero_grad(); // 梯度清零
     bool requires_grad() const {return requires_grad_;} // 构造算子是判断是否需要建图(计算梯度)
@@ -86,6 +88,8 @@ private:
     /* === Autograd内部状态 === */
     std::vector<float> grad_;
     bool requires_grad_ = false;
+
+    void backward_internal();
 
     struct GradFn* grad_fn_ = nullptr;
 

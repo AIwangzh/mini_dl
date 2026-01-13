@@ -103,12 +103,7 @@ Tensor Tensor::operator+(const Tensor& other) const {
 }
 
 Tensor Tensor::operator-(const Tensor& other) const {
-    assert(shape_ == other.shape_);
-    Tensor out(shape_);
-    for (size_t i = 0; i < numel(); ++i) {
-        out.data_[i] = data_[i] - other.data_[i];
-    }
-    return out;
+    return sub(*this, other);
 }
 
 Tensor Tensor::operator*(const Tensor& other) const {
@@ -129,6 +124,11 @@ Tensor Tensor::operator/(const Tensor& other) const {
     }
     return result;
 }
+
+Tensor Tensor::operator-() const {
+    return neg(*this);
+}
+
 
 size_t Tensor::calcOffset(const std::vector<size_t>& indices) const {
     assert(indices.size() == shape_.size());
@@ -211,10 +211,11 @@ void Tensor::zero_grad() {
     std::fill(grad_.begin(), grad_.end(), 0.0f);
 }
 
-void build_topo(Tensor* t,
+namespace {
+    void build_topo(Tensor* t,
                 std::vector<Tensor*>& topo,
                 std::unordered_set<Tensor*>& visited) {
-    if (visited.count(t)) return;
+    if (!t || visited.count(t)) return;
     visited.insert(t);
 
     if (t->grad_fn()) {
@@ -225,34 +226,40 @@ void build_topo(Tensor* t,
 
     topo.push_back(t);
 }
+}
 
 
 void Tensor::backward() {
-    if (!requires_grad_) return;
-
-    if (numel() != 1) {
-        throw std::runtime_error("backward only supports scalar tensor");
+    // 1) 必须需要梯度
+    if (!requires_grad_) {
+        return;
     }
 
-    // 初始化自身梯度
+    // 2) 当前阶段：仅支持 scalar
+    if (numel() != 1) {
+        throw std::runtime_error(
+            "Tensor::backward(): only scalar Tensor is supported currently"
+        );
+    }
+
+    // 3) 初始化自身梯度为 1（dL/dL = 1）
     if (grad_.empty()) {
         grad_.resize(1, 1.0f);
     }
 
-    // 1. 构建拓扑序
+    // 4) 构建拓扑序
     std::vector<Tensor*> topo;
     std::unordered_set<Tensor*> visited;
-
     build_topo(this, topo, visited);
 
-    // 2. 反向执行 backward
+    // 5) 反向执行（从后往前）
     for (auto it = topo.rbegin(); it != topo.rend(); ++it) {
-        if ((*it)->grad_fn()) {
-            (*it)->grad_fn()->backward((*it)->grad());
+        Tensor* t = *it;
+        if (t->grad_fn()) {
+            t->grad_fn()->backward(t->grad());
         }
     }
 }
-
 // void Tensor::backward() {
 //     // 1. 只有需要梯度的 Tensor 才能 backward
 //     if (!requires_grad_) {

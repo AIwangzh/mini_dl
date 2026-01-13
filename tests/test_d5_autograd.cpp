@@ -4,26 +4,23 @@
 #include "ops.hpp"
 
 int main() {
-    std::cout << "=== Minimal AddGradFn backward test ===\n";
 
-    // 创建两个 Tensor，并开启 autograd
+    /* =======================
+     *  AddGradFn 测试（原样保留）
+     * ======================= */
+    std::cout << "=== AddGradFn test ===\n";
+
     Tensor a({1}, true);
     a[0] = 2.0f;
 
     Tensor b({1}, true);
     b[0] = 3.0f;
 
-    // 第一次加法，生成 c
-    Tensor c = a + b; // AddGradFn 会绑定 a 和 b
-    // 第二次加法，生成 d
-    Tensor d = c + c; // AddGradFn 会绑定 c 和 c
+    Tensor c = a + b;   // c = 5
+    Tensor d = c + c;   // d = 10
 
-    Tensor e = d + d + d;
+    d.backward();
 
-    // 触发反向传播
-    e.backward();
-
-    // 输出结果
     std::cout << "a.grad() = ";
     for (auto v : a.grad()) std::cout << v << " ";
     std::cout << "\n";
@@ -34,9 +31,58 @@ int main() {
 
     std::cout << "c.grad() = ";
     for (auto v : c.grad()) std::cout << v << " ";
+    std::cout << "\n\n";
+
+
+    /* =======================
+     *  SubGradFn 测试
+     * ======================= */
+    std::cout << "=== SubGradFn test ===\n";
+
+    Tensor x({1}, true);
+    x[0] = 5.0f;
+
+    Tensor y({1}, true);
+    y[0] = 2.0f;
+
+    Tensor z = x - y;   // z = 3
+    Tensor w = z - z;   // w = 0
+
+    w.backward();
+
+    std::cout << "x.grad() = ";
+    for (auto v : x.grad()) std::cout << v << " ";
     std::cout << "\n";
 
-    for (auto v : d.grad()) std::cout << v << " ";
+    std::cout << "y.grad() = ";
+    for (auto v : y.grad()) std::cout << v << " ";
+    std::cout << "\n";
+
+    std::cout << "z.grad() = ";
+    for (auto v : z.grad()) std::cout << v << " ";
+    std::cout << "\n\n";
+
+
+    /* =======================
+     *  NegGradFn 测试
+     * ======================= */
+    std::cout << "=== NegGradFn test ===\n";
+
+    Tensor p({1}, true);
+    p[0] = 4.0f;
+
+    Tensor q = -p;      // q = -4
+    Tensor r = q + q;   // r = -8
+
+    r.backward();
+
+    std::cout << "p.grad() = ";
+    for (auto v : p.grad()) std::cout << v << " ";
+    std::cout << "\n";
+
+    std::cout << "q.grad() = ";
+    for (auto v : q.grad()) std::cout << v << " ";
+    std::cout << "\n";
 
     return 0;
 }

@@ -37,12 +37,24 @@ Tensor sub(const Tensor& a, const Tensor& b) {
     auto out_shape = broadcast_shape(a.shape(), b.shape());
     Tensor out(out_shape);
 
-    for(size_t i = 0; i < out.numel(); ++i){
+    for (size_t i = 0; i < out.numel(); ++i) {
         auto idx = unravel_index(i, out_shape);
         size_t ia = ravel_index_broadcast(idx, a.shape());
         size_t ib = ravel_index_broadcast(idx, b.shape());
         out[i] = a[ia] - b[ib];
     }
+
+    // ===== Autograd 绑定 =====
+    if (a.requires_grad() || b.requires_grad()) {
+        out.set_requires_grad(true);
+        out.set_grad_fn(
+            new SubGradFn(
+                const_cast<Tensor*>(&a),
+                const_cast<Tensor*>(&b)
+            )
+        );
+    }
+
     return out;
 }
 
@@ -69,6 +81,25 @@ Tensor div(const Tensor& a, const Tensor& b) {
         size_t ib = ravel_index_broadcast(idx, b.shape());
         out[i] = a[ia] / b[ib];
     }
+    return out;
+}
+
+Tensor neg(const Tensor& a) {
+    Tensor out(a.shape());
+
+    for (size_t i = 0; i < a.numel(); ++i) {
+        out[i] = -a[i];
+    }
+
+    if (a.requires_grad()) {
+        out.set_requires_grad(true);
+        out.set_grad_fn(
+            new NegGradFn(
+                const_cast<Tensor*>(&a)
+            )
+        );
+    }
+
     return out;
 }
 
