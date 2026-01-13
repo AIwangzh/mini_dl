@@ -70,11 +70,9 @@ public:
     bool requires_grad() const {return requires_grad_;} // 构造算子是判断是否需要建图(计算梯度)
     void set_requires_grad(bool r) { requires_grad_ = r; } // 设置requires_grad标志
 
+    int grad_pending_ = 0; // 用于追踪反向传播中未处理的依赖数
     GradFn* grad_fn() const { return grad_fn_; }
     void set_grad_fn(GradFn* fn) { grad_fn_ = fn; }
-
-    
-
 
 
 protected:

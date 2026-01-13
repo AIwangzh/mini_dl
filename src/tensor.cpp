@@ -4,6 +4,7 @@
 #include "ops.hpp"
 #include <cassert>
 #include <numeric>
+#include <unordered_set>
 #include <functional>
 #include <stdexcept>
 
@@ -210,29 +211,71 @@ void Tensor::zero_grad() {
     std::fill(grad_.begin(), grad_.end(), 0.0f);
 }
 
+void build_topo(Tensor* t,
+                std::vector<Tensor*>& topo,
+                std::unordered_set<Tensor*>& visited) {
+    if (visited.count(t)) return;
+    visited.insert(t);
+
+    if (t->grad_fn()) {
+        for (Tensor* parent : t->grad_fn()->parents()) {
+            build_topo(parent, topo, visited);
+        }
+    }
+
+    topo.push_back(t);
+}
+
+
 void Tensor::backward() {
-    // 1. 只有需要梯度的 Tensor 才能 backward
-    if (!requires_grad_) {
-        return;
-    }
+    if (!requires_grad_) return;
 
-    // 2. 当前阶段：只允许对 scalar Tensor backward
     if (numel() != 1) {
-        throw std::runtime_error(
-            "backward() only supported for scalar Tensor currently"
-        );
+        throw std::runtime_error("backward only supports scalar tensor");
     }
 
-    // 3. 如果 grad 还没初始化，初始化为 1
+    // 初始化自身梯度
     if (grad_.empty()) {
         grad_.resize(1, 1.0f);
     }
 
-    // 4. 调用 grad_fn 向前传播
-    if (grad_fn_) {
-        grad_fn_->backward(grad_);
+    // 1. 构建拓扑序
+    std::vector<Tensor*> topo;
+    std::unordered_set<Tensor*> visited;
+
+    build_topo(this, topo, visited);
+
+    // 2. 反向执行 backward
+    for (auto it = topo.rbegin(); it != topo.rend(); ++it) {
+        if ((*it)->grad_fn()) {
+            (*it)->grad_fn()->backward((*it)->grad());
+        }
     }
 }
+
+// void Tensor::backward() {
+//     // 1. 只有需要梯度的 Tensor 才能 backward
+//     if (!requires_grad_) {
+//         return;
+//     }
+
+//     // 2. 当前阶段：只允许对 scalar Tensor backward
+//     if (numel() != 1) {
+//         throw std::runtime_error(
+//             "backward() only supported for scalar Tensor currently"
+//         );
+//     }
+
+//     // 3. 如果 grad 还没初始化，初始化为 1
+//     if (grad_.empty()) {
+//         grad_.resize(1, 1.0f);
+//     }
+
+//     // 4. 调用 grad_fn 向前传播
+//     if (grad_fn_) {
+//         grad_fn_->backward(grad_);
+//     }
+// }
 
 
 

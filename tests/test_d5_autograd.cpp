@@ -18,8 +18,10 @@ int main() {
     // 第二次加法，生成 d
     Tensor d = c + c; // AddGradFn 会绑定 c 和 c
 
+    Tensor e = d + d + d;
+
     // 触发反向传播
-    d.backward();
+    e.backward();
 
     // 输出结果
     std::cout << "a.grad() = ";
@@ -33,6 +35,8 @@ int main() {
     std::cout << "c.grad() = ";
     for (auto v : c.grad()) std::cout << v << " ";
     std::cout << "\n";
+
+    for (auto v : d.grad()) std::cout << v << " ";
 
     return 0;
 }

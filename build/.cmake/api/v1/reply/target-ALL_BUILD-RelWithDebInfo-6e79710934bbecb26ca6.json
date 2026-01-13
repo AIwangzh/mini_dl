@@ -1,0 +1,77 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"codemodelVersion" : 
+	{
+		"major" : 2,
+		"minor" : 9
+	},
+	"dependencies" : 
+	[
+		{
+			"id" : "test_d5_autograd::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "test_da4_Transp-BroadC-Flatten::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "test_matmul_day3::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "test_ops::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "test_tensor::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "mini_dl::@6890427a1f51a3e7e1df"
+		}
+	],
+	"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+	"isGeneratorProvided" : true,
+	"name" : "ALL_BUILD",
+	"orderDependencies" : 
+	[
+		{
+			"id" : "test_d5_autograd::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "test_da4_Transp-BroadC-Flatten::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "test_matmul_day3::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "test_ops::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "test_tensor::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "mini_dl::@6890427a1f51a3e7e1df"
+		}
+	],
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

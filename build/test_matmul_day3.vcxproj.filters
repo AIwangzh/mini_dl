@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="E:\BaiduSyncdisk\DNN Framwork\mini_dl\tests\test_matmul_day3.cpp">
+    <ClCompile Include="F:\mini_dl\mini_dl\tests\test_matmul_day3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="E:\BaiduSyncdisk\DNN Framwork\mini_dl\CMakeLists.txt" />
+    <CustomBuild Include="F:\mini_dl\mini_dl\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{841425CB-7128-30E5-BD01-5DC9C9C367BF}</UniqueIdentifier>
+      <UniqueIdentifier>{37F842C6-2A5E-3FFA-BE52-90438CAC5BA4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

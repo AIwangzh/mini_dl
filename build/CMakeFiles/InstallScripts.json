@@ -1,7 +1,7 @@
 {
 	"InstallScripts" : 
 	[
-		"E:/BaiduSyncdisk/DNN Framwork/mini_dl/build/cmake_install.cmake"
+		"F:/mini_dl/mini_dl/build/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

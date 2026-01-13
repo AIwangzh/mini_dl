@@ -1,0 +1,448 @@
+{
+	"configurations" : 
+	[
+		{
+			"abstractTargets" : [],
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f6f22219c74102c3da70.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "mini_dl",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-Debug-6e79710934bbecb26ca6.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-Debug-c6863aa3e7781ac5b772.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "mini_dl::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-mini_dl-Debug-9c5b421c2909effd3b4d.json",
+					"name" : "mini_dl",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_d5_autograd::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_d5_autograd-Debug-9836038ad840f0ab163e.json",
+					"name" : "test_d5_autograd",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_da4_Transp-BroadC-Flatten::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_da4_Transp-BroadC-Flatten-Debug-68983666b0222f91fedc.json",
+					"name" : "test_da4_Transp-BroadC-Flatten",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_matmul_day3::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_matmul_day3-Debug-3dcec946fcd5644a0b31.json",
+					"name" : "test_matmul_day3",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_ops::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_ops-Debug-811eb7c3c84fb5122918.json",
+					"name" : "test_ops",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_tensor::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_tensor-Debug-4139f5a9c66f63e8dc21.json",
+					"name" : "test_tensor",
+					"projectIndex" : 0
+				}
+			]
+		},
+		{
+			"abstractTargets" : [],
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Release-f6f22219c74102c3da70.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "mini_dl",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-Release-6e79710934bbecb26ca6.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-Release-c6863aa3e7781ac5b772.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "mini_dl::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-mini_dl-Release-224749ad1705559de6df.json",
+					"name" : "mini_dl",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_d5_autograd::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_d5_autograd-Release-00bf3fc68fc8254c9d65.json",
+					"name" : "test_d5_autograd",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_da4_Transp-BroadC-Flatten::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_da4_Transp-BroadC-Flatten-Release-dafab02284563abe4d95.json",
+					"name" : "test_da4_Transp-BroadC-Flatten",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_matmul_day3::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_matmul_day3-Release-2a30eaf964b8f7a0ebce.json",
+					"name" : "test_matmul_day3",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_ops::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_ops-Release-4c0fb6e223b3fb1ba6b8.json",
+					"name" : "test_ops",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_tensor::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_tensor-Release-090cb819da78f57c1b58.json",
+					"name" : "test_tensor",
+					"projectIndex" : 0
+				}
+			]
+		},
+		{
+			"abstractTargets" : [],
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-MinSizeRel-f6f22219c74102c3da70.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					]
+				}
+			],
+			"name" : "MinSizeRel",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "mini_dl",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-6e79710934bbecb26ca6.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-MinSizeRel-c6863aa3e7781ac5b772.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "mini_dl::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-mini_dl-MinSizeRel-96259ba985a314a3ca17.json",
+					"name" : "mini_dl",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_d5_autograd::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_d5_autograd-MinSizeRel-1b7ad24a0e0ea11cf7ff.json",
+					"name" : "test_d5_autograd",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_da4_Transp-BroadC-Flatten::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_da4_Transp-BroadC-Flatten-MinSizeRel-d953774c1ffe490b68cd.json",
+					"name" : "test_da4_Transp-BroadC-Flatten",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_matmul_day3::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_matmul_day3-MinSizeRel-352a1535bc9abb4ba4cf.json",
+					"name" : "test_matmul_day3",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_ops::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_ops-MinSizeRel-9c6464f085dcc91b1c4d.json",
+					"name" : "test_ops",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_tensor::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_tensor-MinSizeRel-c55fd5939ea83f2b3c75.json",
+					"name" : "test_tensor",
+					"projectIndex" : 0
+				}
+			]
+		},
+		{
+			"abstractTargets" : [],
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-RelWithDebInfo-f6f22219c74102c3da70.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					]
+				}
+			],
+			"name" : "RelWithDebInfo",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "mini_dl",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-6e79710934bbecb26ca6.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-RelWithDebInfo-c6863aa3e7781ac5b772.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "mini_dl::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-mini_dl-RelWithDebInfo-44e8db3ab82a4885f927.json",
+					"name" : "mini_dl",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_d5_autograd::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_d5_autograd-RelWithDebInfo-a4170fbc68686acdf363.json",
+					"name" : "test_d5_autograd",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_da4_Transp-BroadC-Flatten::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_da4_Transp-BroadC-Flatten-RelWithDebInfo-801dbd616f930e144887.json",
+					"name" : "test_da4_Transp-BroadC-Flatten",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_matmul_day3::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_matmul_day3-RelWithDebInfo-2d2c3dba3a284c1d4238.json",
+					"name" : "test_matmul_day3",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_ops::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_ops-RelWithDebInfo-ac0ca85c4f1519527a66.json",
+					"name" : "test_ops",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_tensor::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_tensor-RelWithDebInfo-0624d63f1cd5138bc159.json",
+					"name" : "test_tensor",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "F:/mini_dl/mini_dl/build",
+		"source" : "F:/mini_dl/mini_dl"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 9
+	}
+}

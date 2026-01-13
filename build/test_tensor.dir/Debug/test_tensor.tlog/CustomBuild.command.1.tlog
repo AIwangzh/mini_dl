@@ -1,6 +1,6 @@
-^E:\BAIDUSYNCDISK\DNN FRAMWORK\MINI_DL\CMAKELISTS.TXT
+^F:\MINI_DL\MINI_DL\CMAKELISTS.TXT
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" "-SE:/BaiduSyncdisk/DNN Framwork/mini_dl" "-BE:/BaiduSyncdisk/DNN Framwork/mini_dl/build" --check-stamp-file "E:/BaiduSyncdisk/DNN Framwork/mini_dl/build/CMakeFiles/generate.stamp"
+"C:\Program Files\CMake\bin\cmake.exe" -SF:/mini_dl/mini_dl -BF:/mini_dl/mini_dl/build --check-stamp-file F:/mini_dl/mini_dl/build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

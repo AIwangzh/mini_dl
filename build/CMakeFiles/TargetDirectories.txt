@@ -1,8 +1,8 @@
-E:/BaiduSyncdisk/DNN Framwork/mini_dl/build/CMakeFiles/mini_dl.dir
-E:/BaiduSyncdisk/DNN Framwork/mini_dl/build/CMakeFiles/test_d5_autograd.dir
-E:/BaiduSyncdisk/DNN Framwork/mini_dl/build/CMakeFiles/test_da4_Transp-BroadC-Flatten.dir
-E:/BaiduSyncdisk/DNN Framwork/mini_dl/build/CMakeFiles/test_matmul_day3.dir
-E:/BaiduSyncdisk/DNN Framwork/mini_dl/build/CMakeFiles/test_ops.dir
-E:/BaiduSyncdisk/DNN Framwork/mini_dl/build/CMakeFiles/test_tensor.dir
-E:/BaiduSyncdisk/DNN Framwork/mini_dl/build/CMakeFiles/ALL_BUILD.dir
-E:/BaiduSyncdisk/DNN Framwork/mini_dl/build/CMakeFiles/ZERO_CHECK.dir
+F:/mini_dl/mini_dl/build/CMakeFiles/mini_dl.dir
+F:/mini_dl/mini_dl/build/CMakeFiles/test_d5_autograd.dir
+F:/mini_dl/mini_dl/build/CMakeFiles/test_da4_Transp-BroadC-Flatten.dir
+F:/mini_dl/mini_dl/build/CMakeFiles/test_matmul_day3.dir
+F:/mini_dl/mini_dl/build/CMakeFiles/test_ops.dir
+F:/mini_dl/mini_dl/build/CMakeFiles/test_tensor.dir
+F:/mini_dl/mini_dl/build/CMakeFiles/ALL_BUILD.dir
+F:/mini_dl/mini_dl/build/CMakeFiles/ZERO_CHECK.dir
