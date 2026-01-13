@@ -1,0 +1,18 @@
+# 忽略 CMake 生成的构建目录
+build/
+bin/
+
+# 忽略编译器生成的中间文件
+*.obj
+*.exe
+*.o
+*.a
+*.lib
+
+# 忽略 IDE 的私有设置（可选）
+.vscode/
+.vs/
+*.sln
+*.vcxproj
+*.filters
+*.user
