@@ -8,8 +8,6 @@
 #include <functional>
 #include <stdexcept>
 
-Tensor::Tensor() = default;
-
 /*Tensor::Tensor(const std::vector<size_t>& shape)
     : shape_(shape)
 {
@@ -32,11 +30,7 @@ Tensor::Tensor(const std::vector<size_t>& shape, bool requires_grad)
         grad_.resize(numel(), 0.0f);
     }
 }*/
-
-
-Tensor::Tensor(const std::vector<size_t>& shape)
-    : Tensor(shape, 0.0f, false) {}
-
+/*
 Tensor::Tensor(const std::vector<size_t>& shape, float value)
     : Tensor(shape, value, false) {}
 
@@ -51,6 +45,30 @@ Tensor::Tensor(const std::vector<size_t>& shape, float value, bool requires_grad
 
     if (requires_grad_) {
         grad_.resize(numel(), 0.0f);
+    }
+}
+*/
+Tensor::Tensor(const std::vector<size_t>& shape, bool requires_grad)
+    : shape_(shape), 
+      requires_grad_(requires_grad),
+      grad_fn_(nullptr) // 明确初始化智能指针
+{
+    size_t n = numel();
+    data_.resize(n, 0.0f); // 默认填充 0
+    if (requires_grad_) {
+        grad_.resize(n, 0.0f);
+    }
+}
+
+Tensor::Tensor(const std::vector<size_t>& shape, float value, bool requires_grad)
+    : shape_(shape), 
+      requires_grad_(requires_grad),
+      grad_fn_(nullptr)
+{
+    size_t n = numel();
+    data_.resize(n, value);
+    if (requires_grad_) {
+        grad_.resize(n, 0.0f);
     }
 }
 
